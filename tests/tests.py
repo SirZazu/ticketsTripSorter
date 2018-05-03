@@ -4,11 +4,16 @@
 import unittest
 from unittest import TestCase
 
-from main import TicketsTripSorter
-from .data import test_sort_data_1, test_sort_data_2, test_sort_data_3, test_sort_data_4, test_sort_data_5, \
+import sys
+
+import os
+sys.path.append(os.path.dirname(os.getcwd()))
+
+from data import test_sort_data_1, test_sort_data_2, test_sort_data_3, test_sort_data_4, test_sort_data_5, \
     test_sort_data_6
-from .results import test_sort_result_1, test_sort_result_2, test_sort_result_3, test_sort_result_4, \
+from results import test_sort_result_1, test_sort_result_2, test_sort_result_3, test_sort_result_4, \
     test_sort_result_5, test_list_result
+from main import TicketsTripSorter
 
 
 class TestsTripSorter(TestCase):
