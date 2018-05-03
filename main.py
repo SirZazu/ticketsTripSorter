@@ -80,7 +80,7 @@ class TicketsTripSorter(object):
         current_path.append(trips_list[current_idx])
         current_city = trips_list[current_idx]["arrival"]
         next_city = ""
-        final_frontier = []
+        final_result = []
         del trips_list[current_idx]
         while current_path:
             if self.city_edges[current_city][0] > 0:
@@ -94,12 +94,12 @@ class TicketsTripSorter(object):
                 current_city = next_city
             else:
                 helper_val = current_path.pop()
-                final_frontier.append(helper_val)
+                final_result.append(helper_val)
                 current_city = helper_val['departure']
         # we need to remove one extra element - now first element
-        del final_frontier[0]
+        del final_result[0]
 
-        return list(reversed(final_frontier))
+        return list(reversed(final_result))
 
     def sort_trip_list(self, list_to_sort):
         result_list = self._sort_list(list_to_sort.copy())
